@@ -1,19 +1,24 @@
 *** Settings ***
-Library     DataDriver      ../Resources/data.xlsx  sheet_name=Sheet1
+#Library     DataDriver      ../Resources/data.xlsx  sheet_name=Sheet1
 Resource    ../Bases/BaseTest.robot
 Resource    ../Microservices/Steps/LoginPageSteps.robot
-Suite Setup     Start Test
-Suite Teardown  Finish Test
-Test Template   Login Flow
+Test Setup     Start Test
+Test Teardown  Finish Test
+#Test Template   LoginPageSteps.Login Flow
 
-*** Keywords ***
-Login Flow
-    [Arguments]                             ${username}         ${password}
-    wait until element is visible           ${inp_username}
-    input text                              ${inp_username}     ${username}
-    input password                          ${inp_password}     ${password}
-    click button                            ${btn_Login}
-    wait until element is visible           ${img_profilePicture}
+#*** Keywords ***
+#Login Test Data
+#    [Arguments]                             ${username}         ${password}
+#    wait until element is visible           ${inp_username}
+#    press keys                              ${inp_username}     CTRL+a  BACKSPACE
+#    input text                              ${inp_username}     ${username}
+#    press keys                              ${inp_password}     CTRL+a  BACKSPACE
+#    input password                          ${inp_password}     ${password}
+#    click button                            ${btn_Login}
 
 *** Test Cases ***
-Login Test      ${username}     ${password}
+#Login Test      ${username}     ${password}
+Login Test Function
+    Login Flow
+    Verify login successfully
+

@@ -3,8 +3,8 @@ Library     Selenium2Library
 Library     ../DriverManager/GetDriver.py
 
 *** Variables ***
-${url}  https://opensource-demo.orangehrmlive.com/
-${title}    OrangeHRM
+${url}  https://test-business.vntrip.vn/
+${title}    Đặt phòng khách sạn trực tuyến tiết kiệm hơn 80% tại Vntrip.vn
 
 *** Keywords ***
 Start Test
